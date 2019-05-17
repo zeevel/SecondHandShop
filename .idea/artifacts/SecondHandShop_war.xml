@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SecondHandShop:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SecondHandShop</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="squirrel.war">
+      <element id="artifact" artifact-name="SecondHandShop:war exploded" />
+    </root>
+  </artifact>
+</component>
