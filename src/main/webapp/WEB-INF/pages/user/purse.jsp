@@ -107,53 +107,79 @@
 				<hr />
 				<div class="share_content">
 					<div class="story">
-						<form id="myUpAndDwon" class="form-horizontal" role="form" action="<%=basePath%>user/updatePurse" >
-							<div class="form-group">
-								<div class="col-sm-12">
-									<img  src="<%=basePath%>img/mypurse.jpg" />
-								</div>
-								<label for="firstname" class="col-sm-2 control-label">余额：</label>
-								<div class="col-sm-10">
-									<input type="text" name="balance" class="form-control" disabled="disabled" style="border:0px;background:rgba(0, 0, 0, 0); " value="${myPurse.balance}" >
-								</div>
-								<label for="firstname" class="col-sm-2 control-label" >充值：</label>
-								<div class="col-sm-10">
-									<input name="recharge" type="number" class="form-control recharge" style="border:0px;background:rgba(0, 0, 0, 0); " value="${myPurse.recharge}" data-toggle="tooltip"  title="请输入整数金额！"/>
-									<%-- value="${myPurse.recharge}"  value="${myPurse.withdrawals}"--%>
-								</div>
-								<label for="firstname" class="col-sm-2 control-label" >提现：</label>
-								<div class="col-sm-10">
-									<input name="withdrawals" type="number" class="form-control withdrawals" style="border:0px;background:rgba(0, 0, 0, 0); " value="${myPurse.withdrawals}" data-toggle="tooltip"  title="请输入整数金额！"/>
+						<div class="container">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist" style="width: 46%">
+								<!-- <li class="nav-item"><a class="nav-link active"
+									data-toggle="tab" href="#home">全部订单</a></li> -->
+								<li class="nav-item"><a class="nav-link active" data-toggle="tab"
+								                        href="#alipay_recharge" >充值</a></li>
+								<li class="nav-item" ><a class="nav-link" data-toggle="tab"
+								                         href="#alipay_withdraw" >提现</a></li>
+							</ul>
 
+							<!-- Tab panes -->
+							<div class="tab-content" style="width: 46%">
+								<!-- 充值Tab -->
+								<div id="alipay_recharge" class="container tab-pane active"
+								     style="width: 100%">
+									<br>
+									<form id="myRecharge" class="form-horizontal" role="form"
+									      action="<%=basePath%>user/recharge" method="post" >
+										<div class="form-group">
+											<label  class="col-sm-2 control-label">余额：</label>
+											<div class="col-sm-10">
+												<input type="text" name="balance" class="form-control" disabled="disabled" style="border:0px;background:rgba(0, 0, 0, 0); " value="${myPurse.balance}" >
+											</div>
+											<label  class="col-sm-2 control-label" >充值：</label>
+											<div class="col-sm-10">
+												<input name="recharge" type="number" class="form-control recharge" style="border:0px;background:rgba(0, 0, 0, 0); "  data-toggle="tooltip"  title="请输入整数金额！"/>
+												<%-- value="${myPurse.recharge}"  value="${myPurse.withdrawals}"--%>
+											</div>
+										</div>
+										<hr />
+										<div class="form-group">
+											<div class="col-sm-8">
+												<c:if test="${errMsg != null}">
+													${errMsg}
+												</c:if>
+											</div>
+											<div class="col-sm-4">
+												<a  onclick="upAnddown(1)" class="btn btn-danger">立即充值</a>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- 提现Tab -->
+								<div id="alipay_withdraw" class="container tab-pane fade"
+								     style="width: 100%">
+									<br>
+									<form id="myWithdraw" class="form-horizontal" role="form"
+									      action="<%=basePath%>user/withdraw" method="post" >
+										<div class="form-group">
+											<label  class="col-sm-3 control-label">余额：</label>
+											<div class="col-sm-9">
+												<input type="text" name="balance" class="form-control" disabled="disabled" style="border:0px;background:rgba(0, 0, 0, 0); " value="${myPurse.balance}" >
+											</div>
+											<label  class="col-sm-3 control-label" >支付宝账号：</label>
+											<div class="col-sm-9">
+												<input name="payee_account" type="text" class="form-control payee_account" style="border:0px;background:rgba(0, 0, 0, 0); "  data-toggle="tooltip" />
+											</div>
+											<label  class="col-sm-3 control-label" >提现金额：</label>
+											<div class="col-sm-9">
+												<input name="amount" type="number" class="form-control amount" style="border:0px;background:rgba(0, 0, 0, 0); "  data-toggle="tooltip"  />
+											</div>
+										</div>
+										<hr />
+										<div class="form-group">
+											<div class="col-sm-offset-8 col-sm-4">
+												<a  onclick="upAnddown(2)" class="btn btn-danger">立即提现</a>
+											</div>
+										</div>
+									</form>
 								</div>
 							</div>
-							<hr />
-							<div class="form-group">
-								<div class="col-sm-offset-4 col-sm-8">
-									<%--   <a href="<%=basePath%>goods/goodsId/${goodsExtend.goods.id}" class="btn btn-danger">取消支付</a>
-									  <c:if test="${cur_user.money >= goodsExtend.goods.price}"><button type="submit" class="btn btn-info">立即支付</button></c:if>
-									  <c:if test="${cur_user.money < goodsExtend.goods.price}"><button disabled="disabled" class="btn btn-danger">余额不足，请充值！</button></c:if>
-									   --%>
-									<c:if test="${myPurse.state==null}">
-										<a  onclick="upAnddown(1)" class="btn btn-danger">立即充值</a>
-										<a  onclick="upAnddown(2)" class="btn btn-danger">立即提现</a>
-									</c:if>
-
-									<c:if test="${myPurse.state==0}">
-										<c:if test="${myPurse.recharge!=null}">
-											<a   class="btn btn-danger">【申请提现中】,待管理员审核！</a>
-										</c:if>
-										<c:if test="${myPurse.withdrawals!=null}">
-											<a   class="btn btn-danger">【申请充值中】,待管理员审核！</a>
-										</c:if>
-									</c:if>
-
-									<c:if test="${myPurse.state==1 or myPurse.state==2}">
-										<a   class="btn btn-danger btn_mypurse">请点击查看审核结果！</a>
-									</c:if>
-								</div>
-							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -207,13 +233,15 @@
                 $(".withdrawals").val("");
 
                 //提交表单
-                $("#myUpAndDwon").submit();
-                alert("申请充值成功，等待管理员审核~")
+                $("#myRecharge").submit();
             }
 
         }
         if(num==2){
-            var withdrawals=$(" input[ name='withdrawals' ] ").val();
+            var withdrawals=$(" input[ name='amount' ] ").val();
+            var payee_account=$(" input[ name='payee_account' ] ").val();
+            console.log(withdrawals)
+	        console.log(payee_account)
             if(withdrawals==null || withdrawals==""){
                 alert("请输入您要提现的金额！")
             }else if(reg.test(withdrawals)!=true){
@@ -221,10 +249,11 @@
             }else if(withdrawals>${myPurse.balance}){
                 alert("您输入的金额太大，请重新输入！")
             }else{
-                $(".Recharge").val("");
                 //提交表单
-                $("#myUpAndDwon").submit();
-                alert("申请提现成功，等待管理员审核~")
+                $("#myWithdraw").submit();
+
+                $(".amount").val("");
+                $(".payee_account").val("");
             }
         }
 

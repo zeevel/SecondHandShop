@@ -1,5 +1,12 @@
 package com.hnust.controller;
 
+import com.alipay.api.AlipayApiException;
+import com.alipay.api.AlipayClient;
+import com.alipay.api.DefaultAlipayClient;
+import com.alipay.api.internal.util.AlipaySignature;
+import com.alipay.api.request.AlipayFundTransToaccountTransferRequest;
+import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.alipay.api.response.AlipayFundTransToaccountTransferResponse;
 import com.hnust.pojo.Focus;
 import com.hnust.pojo.Goods;
 import com.hnust.pojo.GoodsExtend;
@@ -13,7 +20,9 @@ import com.hnust.service.ImageService;
 import com.hnust.service.NoticeService;
 import com.hnust.service.PurseService;
 import com.hnust.service.UserService;
+import com.hnust.util.AlipayConfig;
 import com.hnust.util.DateUtil;
+import com.hnust.util.KeyUtil;
 import com.hnust.util.MD5;
 
 import org.springframework.stereotype.Controller;
@@ -25,10 +34,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -360,7 +370,147 @@ public class UserController {
 		}
 		return "redirect:/user/myPurse";
 	}
-	
+
+	@RequestMapping(value="/recharge",method=RequestMethod.POST)
+	public void recharge(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		User cur_user = (User) request.getSession().getAttribute("cur_user");
+		String recharge = request.getParameter("recharge");
+		AlipayClient alipayClient = new
+				DefaultAlipayClient("https://openapi.alipaydev.com/gateway.do",
+				AlipayConfig.app_id,
+				AlipayConfig.merchant_private_key,
+				"json",
+				AlipayConfig.charset,
+				AlipayConfig.alipay_public_key,
+				AlipayConfig.sign_type);
+		String out_trade_no = KeyUtil.getUniqueKey();
+		out_trade_no = URLDecoder.decode(out_trade_no,"UTF-8");
+		String total_amount = recharge;
+		total_amount = URLDecoder.decode(total_amount,"UTF-8");
+		String subject = "科大二手商城，用户:" + cur_user.getUsername() + "  充值金币" + total_amount;
+		subject = URLDecoder.decode(subject,"UTF-8");
+		String body = "商品描述";
+		body = URLDecoder.decode(body,"UTF-8");
+
+		AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();//创建API对应的request
+		alipayRequest.setReturnUrl(AlipayConfig.return_url);
+		alipayRequest.setBizContent("{" +
+				"    \"out_trade_no\":\""+ out_trade_no +"\"," +
+				"    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," +
+				"    \"total_amount\":"+ total_amount +"," +
+				"    \"subject\":\""+ subject +"\"," +
+				"    \"body\":\""+ body +"\"" +
+				"    }"+
+				"  }");//填充业务参数
+		String form="";
+		try {
+			form = alipayClient.pageExecute(alipayRequest).getBody(); //调用SDK生成表单
+		} catch (AlipayApiException e) {
+			e.printStackTrace();
+		}
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().println(form);//直接将完整的表单html输出到页面
+		response.getWriter().close();
+	}
+
+	@RequestMapping("/callback")
+	public ModelAndView callback(HttpServletRequest request, HttpServletResponse response) throws IOException, AlipayApiException {
+
+		//获取支付宝GET过来反馈信息
+		Map<String,String> params = new HashMap<String,String>();
+		Map<String,String[]> requestParams = request.getParameterMap();
+		for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext();) {
+			String name = (String) iter.next();
+			String[] values = (String[]) requestParams.get(name);
+			String valueStr = "";
+			for (int i = 0; i < values.length; i++) {
+				valueStr = (i == values.length - 1) ? valueStr + values[i]
+						: valueStr + values[i] + ",";
+			}
+			//乱码解决，这段代码在出现乱码时使用
+			valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
+			params.put(name, valueStr);
+		}
+
+		boolean signVerified = AlipaySignature.rsaCheckV1(params,
+				AlipayConfig.alipay_public_key,
+				AlipayConfig.charset,
+				AlipayConfig.sign_type); //调用SDK验证签名
+		ModelAndView modelAndView = new ModelAndView();
+		if(signVerified) {//验证成功
+			//商户订单号
+			String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"),"UTF-8");
+			//支付宝交易号
+			String trade_no = new String(request.getParameter("trade_no").getBytes("ISO-8859-1"),"UTF-8");
+			//付款金额
+			String total_amount = new String(request.getParameter("total_amount").getBytes("ISO-8859-1"),"UTF-8");
+
+//			response.getWriter().println("success");
+//			response.getWriter().println("out_trade_no: " + out_trade_no);
+//			response.getWriter().println("trade_no: " +trade_no);
+//			response.getWriter().println("total_amount: " +total_amount);
+			response.setCharacterEncoding("utf-8");
+			response.getWriter().println("【科大二手商城】:充值金币" + total_amount + "success");
+
+			//给用户加金币
+            User cur_user = (User)request.getSession().getAttribute("cur_user");
+            Integer user_id = cur_user.getId();
+			Purse myPurse = purseService.getPurseByUserId(user_id);
+			purseService.updatePurseByuserId(user_id, Float.valueOf(total_amount));
+			myPurse = purseService.getPurseByUserId(user_id);
+
+			modelAndView.addObject("myPurse", myPurse);
+			modelAndView.setViewName("/user/home");
+			return modelAndView;
+		}else {//验证失败
+			modelAndView.addObject("errMsg","充值失败");
+			modelAndView.setViewName("/user/myPurse");
+			return modelAndView;
+		}
+	}
+
+	@RequestMapping(value="/withdraw",method=RequestMethod.POST)
+	public ModelAndView withdraw(HttpServletRequest request,HttpServletResponse response) throws IOException, AlipayApiException {
+		User cur_user = (User) request.getSession().getAttribute("cur_user");
+		String payee_account = request.getParameter("payee_account");
+		String amount = request.getParameter("amount");
+
+		AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipaydev.com/gateway.do",
+				AlipayConfig.app_id,
+				AlipayConfig.merchant_private_key,
+				"json",
+				AlipayConfig.charset,
+				AlipayConfig.alipay_public_key,
+				AlipayConfig.sign_type);
+		String out_biz_no = KeyUtil.getUniqueKey();
+		out_biz_no = URLDecoder.decode(out_biz_no,"UTF-8");
+		String payee_type = "ALIPAY_LOGONID";
+		payee_type = URLDecoder.decode(payee_type,"UTF-8");
+		payee_account = URLDecoder.decode(payee_account,"UTF-8");
+		amount = URLDecoder.decode(amount,"UTF-8");
+
+		AlipayFundTransToaccountTransferRequest alipayRequest = new AlipayFundTransToaccountTransferRequest();
+		alipayRequest.setBizContent("{" +
+				"   \"out_biz_no\": \"" + out_biz_no + "\"," +
+				"   \"payee_type\": \"" + payee_type + "\"," +
+				"   \"payee_account\": \"" + payee_account + "\"," +
+				"   \"amount\": \"" + amount + "\"," +
+				"}");
+		AlipayFundTransToaccountTransferResponse responseAli = alipayClient.execute(alipayRequest);
+        if(responseAli.isSuccess()){
+        	Integer user_id = cur_user.getId();
+			Purse myPurse = purseService.getPurseByUserId(user_id);
+			purseService.updatePurseByuserId(user_id, -Float.valueOf(amount));
+			myPurse = purseService.getPurseByUserId(user_id);
+            response.getWriter().println("success");
+        } else {
+            response.getWriter().println("error");
+			response.getWriter().println("<a href=\"localhost:8081\">首页</a>");
+        }
+
+		return null;
+	}
+
 	@RequestMapping(value = "/insertSelective",method = RequestMethod.POST)
 	@ResponseBody
 	public String insertSelective(HttpServletRequest request){

@@ -14,7 +14,10 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
+import com.alipay.api.request.AlipayFundTransToaccountTransferRequest;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.alipay.api.response.AlipayFundTransToaccountTransferResponse;
+import com.alipay.api.response.AlipayTradePagePayResponse;
 import com.hnust.util.AlipayConfig;
 import com.hnust.util.KeyUtil;
 import org.springframework.stereotype.Controller;
@@ -203,6 +206,48 @@ public class OrdersController {
         }else {//验证失败
             response.getWriter().println("fail");
         }
+    }
+
+    @RequestMapping(value="/withdraw")
+    public void withdraw(HttpServletRequest request, HttpServletResponse response) throws AlipayApiException, IOException {
+        AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipaydev.com/gateway.do",
+                AlipayConfig.app_id,
+                AlipayConfig.merchant_private_key,
+                "json",
+                AlipayConfig.charset,
+                AlipayConfig.alipay_public_key,
+                AlipayConfig.sign_type);
+        String out_biz_no = KeyUtil.getUniqueKey();
+        out_biz_no = URLDecoder.decode(out_biz_no,"UTF-8");
+        String payee_type = "ALIPAY_LOGONID";
+        payee_type = URLDecoder.decode(payee_type,"UTF-8");
+        String payee_account = "wciwno3848@sandbox.com";
+        payee_account = URLDecoder.decode(payee_account,"UTF-8");
+        String amount = "100";
+        amount = URLDecoder.decode(amount,"UTF-8");
+
+        AlipayFundTransToaccountTransferRequest alipayRequest = new AlipayFundTransToaccountTransferRequest();
+        alipayRequest.setBizContent("{" +
+                "   \"out_biz_no\": \"" + out_biz_no + "\"," +
+                "   \"payee_type\": \"" + payee_type + "\"," +
+                "   \"payee_account\": \"" + payee_account + "\"," +
+                "   \"amount\": \"" + amount + "\"," +
+                "}");
+//        AlipayFundTransToaccountTransferResponse responseAli = alipayClient.execute(alipayRequest);
+//        if(responseAli.isSuccess()){
+//            response.getWriter().println("success");
+//        } else {
+//            response.getWriter().println("error");
+//        }
+        String form = "";
+        try{
+            form = alipayClient.pageExecute(alipayRequest).getBody();
+        }catch (AlipayApiException e){
+            e.printStackTrace();
+        }
+        response.setContentType("text/html;charset=utf-8");
+        response.getWriter().println(form);//直接将完整的表单html输出到页面
+        response.getWriter().close();
     }
 
     @RequestMapping("/write")
