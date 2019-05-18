@@ -27,6 +27,16 @@ public class Goods {
 
     private String describle;
 
+    private String region;
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public Integer getId() {
         return id;
     }

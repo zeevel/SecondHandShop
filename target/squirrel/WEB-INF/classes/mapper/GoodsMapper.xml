@@ -13,6 +13,7 @@
     <result column="start_time" property="startTime" jdbcType="VARCHAR" />
     <result column="end_time" property="endTime" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="region" property="region" jdbcType="VARCHAR"/>
     <result column="polish_time" property="polishTime" jdbcType="VARCHAR" />
     <collection property="comments" ofType="com.hnust.pojo.Comments">
     	<id column="commentsId" property="id" jdbcType="INTEGER" />
@@ -45,6 +46,7 @@
     <result column="start_time" property="startTime" jdbcType="VARCHAR" />
     <result column="end_time" property="endTime" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="region" property="region" jdbcType="VARCHAR"/>
     <result column="polish_time" property="polishTime" jdbcType="VARCHAR" />
   </resultMap>
   
@@ -52,7 +54,7 @@
     <result column="describle" property="describle" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, catelog_id, user_id, name, price, real_price, start_time, polish_time, end_time, status
+    id, catelog_id, user_id, name, price, real_price, start_time, polish_time, end_time, status, region
   </sql>
   <sql id="Blob_Column_List" >
     describle
@@ -74,6 +76,7 @@
   		aa.end_time,
   		aa.status,
   		aa.polish_time,
+  		aa.region,
   		dd.*
   		from goods aa
   		left join (
@@ -201,10 +204,11 @@
   <insert id="insert" parameterType="com.hnust.pojo.Goods" useGeneratedKeys="true" keyProperty="id">
     insert into goods (id, catelog_id, user_id,
     name, price, real_price, start_time,
-    end_time, polish_time,describle)
+    end_time, polish_time,describle,region)
     values (#{id,jdbcType=INTEGER}, #{catelogId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER},
     #{name,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{realPrice,jdbcType=REAL}, #{startTime,jdbcType=VARCHAR},
-    #{endTime,jdbcType=VARCHAR}, #{polishTime,jdbcType=VARCHAR}, #{describle,jdbcType=LONGVARCHAR}
+    #{endTime,jdbcType=VARCHAR}, #{polishTime,jdbcType=VARCHAR}, #{describle,jdbcType=LONGVARCHAR},
+    #{region,jdbcType=VARCHAR}
     )
   </insert>
   <insert id="insertSelective" parameterType="com.hnust.pojo.Goods" >
@@ -243,6 +247,9 @@
       <if test="describle != null" >
         describle,
       </if>
+      <if test="region != null">
+        region,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -277,6 +284,9 @@
       </if>
       <if test="describle != null" >
         #{describle,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="region != null" >
+        #{region, jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -313,6 +323,9 @@
       <if test="describle != null" >
         describle = #{describle,jdbcType=LONGVARCHAR},
       </if>
+      <if test="region != null" >
+        region = #{region,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -327,7 +340,8 @@
       end_time = #{endTime,jdbcType=VARCHAR},
       polish_time = #{polishTime,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      describle = #{describle,jdbcType=LONGVARCHAR}
+      describle = #{describle,jdbcType=LONGVARCHAR},
+      region = #{region,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hnust.pojo.Goods" >
@@ -341,7 +355,8 @@
       end_time = #{endTime,jdbcType=VARCHAR},
       polish_time = #{polishTime,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      describle = #{describle,jdbcType=LONGVARCHAR}
+      describle = #{describle,jdbcType=LONGVARCHAR},
+      region = #{region,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateGoodsByGoodsId" parameterType="com.hnust.pojo.Goods" >

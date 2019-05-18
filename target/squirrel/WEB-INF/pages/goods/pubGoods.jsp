@@ -113,19 +113,16 @@
                 <form:form action="../goods/publishGoodsSubmit" method="post" role="form" enctype="multipart/form-data">
                     <h1 style="margin-left: 210px;">发布物品</h1><hr />
                     <div class="changeinfo">
-                        <span>物品名：</span>
                         <input class="in_info" type="text" name="name" placeholder="请输入物品名"/>
-                        <span>(*必填)</span>
+                        <span>物品名(*必填)</span>
                     </div>
                     <div class="changeinfo">
-                        <span>出售价格：</span>
                         <input class="in_info" type="text" name="price" placeholder="请输入出售价格"/>
-                        <span>(*必填)</span>
+                        <span>出售价格(*必填)</span>
                     </div>
                     <div class="changeinfo">
-                        <span>原价：</span>
                         <input class="in_info" type="text" name="realPrice" placeholder="请输入商品原价"/>
-                        <span id="checkphone">(*选填,请如实填写)</span>
+                        <span id="checkphone">原价(*选填,请如实填写)</span>
                     </div>
                     <div class="changeinfo">
                         <span>物品类别：</span>
@@ -138,6 +135,10 @@
                             <option value="6">运动棋牌</option>
                             <option value="7">票券小物</option>
                         </select>
+                    </div>
+                    <div class="changeinfo">
+                        <input class="in_info" type="text" name="region" placeholder="请输入交易地点"/>
+                        <span>交易地点(*必填)</span>
                     </div>
                     <div class="changeinfo" id="dir">
                         <span>商品描述：</span>

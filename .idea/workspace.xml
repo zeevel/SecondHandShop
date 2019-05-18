@@ -9,7 +9,24 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b29518e-9a77-4a0f-9d4a-486692f7031c" name="Default" comment="" />
+    <list default="true" id="2b29518e-9a77-4a0f-9d4a-486692f7031c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnust/pojo/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnust/pojo/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/catelogGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/catelogGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/editGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/editGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/homeGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/homeGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/pubGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/pubGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/pay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hnust/pojo/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hnust/pojo/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/pojo/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/pojo/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/mapper/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/catelogGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/catelogGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/editGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/editGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/homeGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/homeGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/pubGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/goods/pubGoods.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/user/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/user/pay.jsp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../favorites-web/.gradle/" />
@@ -24,12 +41,18 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/../favorites-web">
@@ -49,19 +72,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/GoodsController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5747">
-              <caret line="152" column="46" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="46" />
+            <state relative-caret-position="1003">
+              <caret line="456" selection-start-line="456" selection-end-line="456" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/Goods.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/GoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="-1642">
+              <caret line="63" column="34" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -80,21 +103,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sear</find>
-      <find>鲁东大学</find>
-      <find>publish</find>
-      <find>myfile</find>
-      <find>basic</find>
-      <find>46%</find>
-      <find>6046</find>
       <find>user_info</find>
       <find>鲁大</find>
-      <find>login</find>
       <find>登录</find>
       <find>user_area</find>
       <find>buy</find>
       <find>updatePursePa</find>
-      <find>积分</find>
       <find>myUpAndDwon</find>
       <find>myPurse</find>
       <find>update</find>
@@ -110,6 +124,15 @@
       <find>PursePa</find>
       <find>uploadFile</find>
       <find>selectByStr</find>
+      <find>region</find>
+      <find>积分</find>
+      <find>湖南科技大学</find>
+      <find>catelog</find>
+      <find>publish</find>
+      <find>getGoodsByPrimaryKey</find>
+      <find>selectByPrimaryKey</find>
+      <find>login</find>
+      <find>home</find>
     </findStrings>
     <replaceStrings>
       <replace>ldu</replace>
@@ -121,19 +144,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../favorites-web/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/../favorites-web/src/main/resources/application-pro.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/dao/CatelogMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/controller/CatelogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/pojo/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/pay.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/editGoods.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/searchGoods.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/pojo/Goods.java" />
@@ -144,8 +163,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/user.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/service/impl/GoodsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/pojo/GoodsExtend.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/catelogGoods.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/homeGoods.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/detailGoods.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ldu/controller/GoodsController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/home.jsp" />
@@ -157,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/goods.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/basic.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/pubGoods.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/userList.jsp" />
@@ -171,6 +187,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hnust/service/impl/PurseServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hnust/controller/OrdersController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/purse.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hnust/pojo/Goods.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/homeGoods.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/pay.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/catelogGoods.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/pubGoods.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/editGoods.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java" />
       </list>
     </option>
@@ -210,9 +233,9 @@
     <option name="jreName" value="#JAVA_HOME" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -258,6 +281,34 @@
               <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hnust" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hnust" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hnust" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -268,6 +319,50 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="goods" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -277,10 +372,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SearchEverywhereHistoryKey" value=".share_content .story .name&#9;null&#9;null&#10;#user_content .share .publish .button .checkbox&#9;null&#9;null&#10;.button .checkbox&#9;null&#9;null&#10;title.png&#9;FILE&#9;file://E:/IntelliJ_Project/squirrel/src/main/webapp/img/title.png&#10;.more-vert&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558197608805" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558204079727" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="js-jscs-nodeInterpreter" value="D:\SoftWare\Nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -293,11 +389,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SecondHandShop" />
       <recent name="E:\SecondHandShop\src\main\java\com\hnust\util" />
       <recent name="E:\SecondHandShop\src\main\webapp" />
       <recent name="E:\squirrel2.0-master\src\main\webapp\img" />
       <recent name="E:\IntelliJ_Project\squirrel\src\main\webapp\WEB-INF\pages\admin" />
-      <recent name="E:\IntelliJ_Project\squirrel\src\main\webapp\WEB-INF\pages\goods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\squirrel\src\main\webapp\WEB-INF\pages" />
@@ -818,17 +914,17 @@
       <workItem from="1558022613565" duration="11529000" />
       <workItem from="1558077653576" duration="1918000" />
       <workItem from="1558097269686" duration="4793000" />
-      <workItem from="1558160931855" duration="13920000" />
+      <workItem from="1558160931855" duration="20783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="379513000" />
+    <option name="totallyTimeSpent" value="386376000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.20643431" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.20308311" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.23592493" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Designer" order="3" />
@@ -840,8 +936,8 @@
       <window_info id="JRebel" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3186969" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3711048" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.53966004" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4858357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -865,7 +961,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Properties" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="5" weight="0.3297587" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -928,11 +1024,23 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hnust/controller/AdminController.java</url>
           <line>274</line>
           <properties />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hnust/controller/GoodsController.java</url>
+          <line>275</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java</url>
+          <line>455</line>
+          <properties />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -942,40 +1050,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/userhome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="123" column="31" lean-forward="true" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/goods.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/img/title.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/img/home_header.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -987,13 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="214" column="10863" selection-start-line="214" selection-start-column="10863" selection-end-line="214" selection-end-column="10863" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/homeGoods.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="211" column="102" selection-start-line="211" selection-start-column="96" selection-end-line="211" selection-end-column="102" />
         </state>
       </provider>
     </entry>
@@ -1132,13 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/Purse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1192,23 +1252,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/OrdersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="235" selection-start-line="235" selection-end-line="240" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="503" column="61" lean-forward="true" selection-start-line="503" selection-start-column="61" selection-end-line="503" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/purse.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1233,38 +1276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/CommentExtend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/CommentData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/pubGoods.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="186" column="60" lean-forward="true" selection-start-line="186" selection-start-column="60" selection-end-line="186" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/GoodsExtend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1275,24 +1290,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/CommentExtend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="132" column="44" lean-forward="true" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
+        <state relative-caret-position="200">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/44f259ac-8e4f-404e-b097-d104e82c9646/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secondhandmarket.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/Goods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/pojo/GoodsExtend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/pay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/homeGoods.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="360" column="51" selection-start-line="360" selection-start-column="51" selection-end-line="360" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/userhome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="55" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/catelogGoods.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="300" column="32" selection-start-line="300" selection-start-column="32" selection-end-line="300" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/service/impl/GoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="67" column="51" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="51" />
+        <state relative-caret-position="149">
+          <caret line="39" column="52" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="49" column="76" lean-forward="true" selection-start-line="49" selection-start-column="76" selection-end-line="49" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/pubGoods.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="139" column="71" selection-start-line="139" selection-start-column="71" selection-end-line="139" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/goods/editGoods.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="137" column="26" lean-forward="true" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/OrdersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="235" selection-start-line="235" selection-end-line="240" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5747">
-          <caret line="152" column="46" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="46" />
+        <state relative-caret-position="-1642">
+          <caret line="63" column="34" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="456" selection-start-line="456" selection-end-line="456" />
         </state>
       </provider>
     </entry>

@@ -80,7 +80,6 @@
 				   <a class="btn" style="width: 98%;background-color: rgb(79, 190, 246);color:rgba(255, 255, 255, 1);" href="<%=basePath%>user/myPurse">我的钱包：￥${myPurse.balance}</a>
                 <input type="hidden" value="${myPurse.recharge}" id="recharge"/>
                 <input type="hidden" value="${myPurse.withdrawals}" id="withdrawals"/>
-               <span class="btn" data-toggle="modal" data-target="#myModal"style="width: 98%; background-color: rgb(79, 190, 246); color: rgba(255, 255, 255, 1); margin-top: 0.5cm;">我的信用积分：${cur_user.power}</span>
 
 				</div>
 				<div class="home_nav">
@@ -163,38 +162,7 @@
 						</div>
 					</div>
 				</div>
-				<!--
 
-                描述：最右侧，可能认识的人
-            -->
-				<div class="recommend">
-					<div class="title">
-						<span class="text">可能认识的人</span> <span class="change">换一组</span> <span
-							class="underline"></span>
-					</div>
-					<ul>
-						<li><a href="" class="head_img"> <img
-								src="<%=basePath%>img/photo1.jpg">
-						</a> <span>Brudce</span>
-							<div class="fa fa-plus-square"></div></li>
-						<li><a href="" class="head_img"> <img
-								src="<%=basePath%>img/photo2.jpg">
-						</a> <span>Graham</span>
-							<div class="fa fa-plus-square"></div></li>
-						<li><a href="" class="head_img"> <img
-								src="<%=basePath%>img/photo3.jpg">
-						</a> <span>hly</span>
-							<div class="fa fa-plus-square"></div></li>
-						<li><a href="" class="head_img"> <img
-								src="<%=basePath%>img/photo4.jpg">
-						</a> <span>Danger-XFH</span>
-							<div class="fa fa-plus-square"></div></li>
-						<li><a href="" class="head_img"> <img
-								src="<%=basePath%>img/photo5.jpg">
-						</a> <span>Keithw</span>
-							<div class="fa fa-plus-square"></div></li>
-					</ul>
-				</div>
 			</div>
 		</div>
 	</div>
