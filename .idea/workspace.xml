@@ -9,20 +9,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b29518e-9a77-4a0f-9d4a-486692f7031c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnust/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnust/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnust/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnust/service/impl/PurseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnust/service/impl/PurseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hnust/util/AlipayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hnust/util/AlipayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/purse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/purse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnust/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hnust/controller/OrdersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnust/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hnust/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hnust/util/AlipayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hnust/util/AlipayConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/controller/OrdersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/util/AlipayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/classes/com/hnust/util/AlipayConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/user/purse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/squirrel/WEB-INF/pages/user/purse.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="2b29518e-9a77-4a0f-9d4a-486692f7031c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../favorites-web/.gradle/" />
@@ -64,7 +51,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/GoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5372">
+            <state relative-caret-position="-5747">
               <caret line="152" column="46" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="46" />
             </state>
           </provider>
@@ -271,34 +258,6 @@
               <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hnust" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hnust" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hnust" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SecondHandShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SecondHandShop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -321,7 +280,7 @@
     <property name="SearchEverywhereHistoryKey" value=".share_content .story .name&#9;null&#9;null&#10;#user_content .share .publish .button .checkbox&#9;null&#9;null&#10;.button .checkbox&#9;null&#9;null&#10;title.png&#9;FILE&#9;file://E:/IntelliJ_Project/squirrel/src/main/webapp/img/title.png&#10;.more-vert&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558197224964" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558197608805" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="js-jscs-nodeInterpreter" value="D:\SoftWare\Nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -859,12 +818,12 @@
       <workItem from="1558022613565" duration="11529000" />
       <workItem from="1558077653576" duration="1918000" />
       <workItem from="1558097269686" duration="4793000" />
-      <workItem from="1558160931855" duration="13628000" />
+      <workItem from="1558160931855" duration="13920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="379221000" />
+    <option name="totallyTimeSpent" value="379513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1332,7 +1291,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hnust/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5372">
+        <state relative-caret-position="-5747">
           <caret line="152" column="46" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="46" />
         </state>
       </provider>

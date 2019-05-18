@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50629
+Source Server         : gz
+Source Server Version : 50712
 Source Host           : localhost:3306
 Source Database       : secondhandmarket
 
 Target Server Type    : MYSQL
-Target Server Version : 50629
+Target Server Version : 50712
 File Encoding         : 65001
 
-Date: 2018-12-29 20:45:42
+Date: 2019-05-19 00:38:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `admin`
+-- Table structure for admin
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` VALUES ('1', 'jiali', '123456', '123456', '超级管理员');
 
 -- ----------------------------
--- Table structure for `catelog`
+-- Table structure for catelog
 -- ----------------------------
 DROP TABLE IF EXISTS `catelog`;
 CREATE TABLE `catelog` (
@@ -48,16 +48,16 @@ CREATE TABLE `catelog` (
 -- ----------------------------
 -- Records of catelog
 -- ----------------------------
-INSERT INTO `catelog` VALUES ('1', '闲置数码', '10', '1');
-INSERT INTO `catelog` VALUES ('2', '校园代步', '4', '1');
-INSERT INTO `catelog` VALUES ('3', '电器日用', '6', '1');
-INSERT INTO `catelog` VALUES ('4', '图书教材', '7', '1');
-INSERT INTO `catelog` VALUES ('5', '美妆衣物', '11', '1');
-INSERT INTO `catelog` VALUES ('6', '运动棋牌', '5', '1');
-INSERT INTO `catelog` VALUES ('7', '票券小物', '5', '1');
+INSERT INTO `catelog` VALUES ('1', '闲置数码', '18', '1');
+INSERT INTO `catelog` VALUES ('2', '校园代步', '8', '1');
+INSERT INTO `catelog` VALUES ('3', '电器日用', '13', '1');
+INSERT INTO `catelog` VALUES ('4', '图书教材', '13', '1');
+INSERT INTO `catelog` VALUES ('5', '美妆衣物', '16', '1');
+INSERT INTO `catelog` VALUES ('6', '运动棋牌', '8', '1');
+INSERT INTO `catelog` VALUES ('7', '票券小物', '9', '1');
 
 -- ----------------------------
--- Table structure for `comments`
+-- Table structure for comments
 -- ----------------------------
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
@@ -67,7 +67,7 @@ CREATE TABLE `comments` (
   `content` varchar(255) DEFAULT NULL COMMENT '评论内容',
   `create_at` varchar(250) DEFAULT NULL COMMENT '评论时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comments
@@ -79,9 +79,18 @@ INSERT INTO `comments` VALUES ('123', '23', '103', '喜欢排球', '2018-04-27 1
 INSERT INTO `comments` VALUES ('124', '23', '20', '不知道用了多久了', '2018-05-16 01:11:46');
 INSERT INTO `comments` VALUES ('125', '23', '110', '自己看过，很不错的一本书 。', '2018-05-16 01:12:21');
 INSERT INTO `comments` VALUES ('126', '23', '107', 'HHH', '2018-05-16 02:49:59');
+INSERT INTO `comments` VALUES ('127', '25', '106', '是正品吗', '2019-04-24 09:07:23');
+INSERT INTO `comments` VALUES ('128', '25', '86', '你好', '2019-04-27 08:34:04');
+INSERT INTO `comments` VALUES ('129', '27', '115', '像素高吗', '2019-05-15 12:22:54');
+INSERT INTO `comments` VALUES ('130', '26', '20', '是正品吗', '2019-05-15 04:07:43');
+INSERT INTO `comments` VALUES ('131', '26', '111', '书上有笔记吗', '2019-05-15 04:13:21');
+INSERT INTO `comments` VALUES ('132', '26', '115', '挺高的', '2019-05-15 04:14:27');
+INSERT INTO `comments` VALUES ('133', '32', '144', '几成新', '2019-05-16 01:54:03');
+INSERT INTO `comments` VALUES ('134', '26', '121', '风大吗', '2019-05-16 02:04:46');
+INSERT INTO `comments` VALUES ('135', '26', '138', '集散地激发', '2019-05-16 03:29:53');
 
 -- ----------------------------
--- Table structure for `focus`
+-- Table structure for focus
 -- ----------------------------
 DROP TABLE IF EXISTS `focus`;
 CREATE TABLE `focus` (
@@ -89,7 +98,7 @@ CREATE TABLE `focus` (
   `goods_id` int(11) DEFAULT NULL COMMENT '外键 商品id',
   `user_id` int(11) DEFAULT NULL COMMENT '外键 用户id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of focus
@@ -102,9 +111,14 @@ INSERT INTO `focus` VALUES ('8', '90', '9');
 INSERT INTO `focus` VALUES ('9', '90', '22');
 INSERT INTO `focus` VALUES ('18', '5', '23');
 INSERT INTO `focus` VALUES ('19', '85', '23');
+INSERT INTO `focus` VALUES ('20', '113', '26');
+INSERT INTO `focus` VALUES ('23', '144', '26');
+INSERT INTO `focus` VALUES ('24', '145', '27');
+INSERT INTO `focus` VALUES ('25', '138', '26');
+INSERT INTO `focus` VALUES ('26', '138', '26');
 
 -- ----------------------------
--- Table structure for `goods`
+-- Table structure for goods
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
@@ -122,57 +136,58 @@ CREATE TABLE `goods` (
   PRIMARY KEY (`id`),
   KEY `catelog_id` (`catelog_id`) USING BTREE,
   KEY `user_id` (`user_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('1', '6', '1', '精美吉他', '130.00', '160.00', '2017-05-13', '2017-05-13', '2017-05-23', '自用二手吉他，9成新，低价出售，有意者联系。', '1');
-INSERT INTO `goods` VALUES ('2', '2', '1', '山地车', '1520.00', '890.00', '2017-05-13', '2017-05-13', '2017-05-23', '八成新山地车，无损坏，喜欢Call我。', '1');
-INSERT INTO `goods` VALUES ('3', '3', '1', '无线鼠标', '23.00', '48.00', '2017-05-13', '2017-05-13', '2017-05-23', '罗技无线鼠标，自用一个月，9成新，手感好，反应灵敏。', '0');
-INSERT INTO `goods` VALUES ('5', '1', '2', '数码相机', '580.00', '1350.00', '2017-05-14', '2017-05-14', '2017-05-24', '自用的数码相机，一年前购买，非常爱好，无磕碰。可议价。', '1');
-INSERT INTO `goods` VALUES ('6', '1', '2', '笔记本电脑', '690.00', '2300.00', '2017-05-14', '2017-05-14', '2017-05-24', '7成新14寸笔记本电脑，商务本，适合办公，2G内存。', '1');
-INSERT INTO `goods` VALUES ('7', '3', '2', '收纳盒', '15.00', '36.00', '2017-05-14', '2017-05-14', '2017-05-24', '3层塑料物品收纳盒，毕业了，低价出售。', '0');
-INSERT INTO `goods` VALUES ('8', '3', '1', '台灯', '32.00', '58.00', '2017-05-14', '2017-05-14', '2017-05-24', '考研时购买的台灯，可插USB接口。', '1');
-INSERT INTO `goods` VALUES ('9', '5', '2', '女鞋', '35.00', '86.00', '2017-05-14', '2017-05-14', '2017-05-24', '学生女鞋', '0');
-INSERT INTO `goods` VALUES ('11', '1', '3', '无线传呼机', '230.00', '370.00', '2017-05-14', '2018-04-14', '2017-05-24', '一对无线传呼机，带有充电器，可以传呼2公里。', '1');
-INSERT INTO `goods` VALUES ('12', '1', '3', '手提女包', '36.00', '89.00', '2017-05-14', '2018-04-14', '2017-05-24', '手提女包，自用了几天。', '1');
-INSERT INTO `goods` VALUES ('13', '5', '1', '手提包', '15.00', '23.00', '2017-05-14', '2017-05-14', '2017-05-24', '自用手提包，8成新，便宜出。', '1');
-INSERT INTO `goods` VALUES ('16', '6', '2', '耐克运动书包', '56.00', '198.00', '2017-05-14', '2017-05-14', '2017-05-24', '去年年底购买的耐克书包，8成新，无损坏，可以装电脑，很漂亮，有意者联系。', '1');
-INSERT INTO `goods` VALUES ('17', '4', '2', '二手小说', '10.00', '65.00', '2017-05-14', '2017-05-14', '2017-05-24', '毕业季，一书架小说，便宜出售。', '1');
-INSERT INTO `goods` VALUES ('18', '4', '2', '公务员考试资料', '35.00', '79.00', '2017-05-14', '2017-05-14', '2017-05-24', '刚刚考完公务员的复习资料。淘宝购买，低价出售。', '1');
-INSERT INTO `goods` VALUES ('20', '1', '4', 'Thinkpad笔记本', '1600.00', '2300.00', '2017-05-14', '2017-05-14', '2017-05-24', '京东购买的Thinkpad笔记本电脑，九成新。', '1');
-INSERT INTO `goods` VALUES ('78', '1', '3', '大学生用计算器。', '10.00', '15.00', '2018-04-14', '2018-04-14', '2018-04-24', '用一两次过，但没怎么用过。基本全新的', '0');
-INSERT INTO `goods` VALUES ('79', '1', '3', '出HTC M9ET 3+32G', '1500.00', '2888.00', '2018-04-14', '2018-04-14', '2018-04-24', '自用，自认为九成新，除了边角磕碰，其他都好，无暗病', '1');
-INSERT INTO `goods` VALUES ('80', '1', '4', '二手苹果iphone6 6s', '2488.00', '4888.00', '2018-04-14', '2018-04-14', '2018-04-24', '无锁 支持三网4G 成色9-99新 优先下单优先挑选靓成色发货 主板无限 无暗病 功能全部正常 诚信经营 以上均64G 需其他机型可私聊', '1');
-INSERT INTO `goods` VALUES ('81', '2', '4', '168元出售全新自行车', '168.00', '899.00', '2018-04-14', '2018-04-14', '2018-04-24', '要毕业了，低价出手吧 要得给我打电话', '0');
-INSERT INTO `goods` VALUES ('82', '2', '5', '二手 电动车', '1700.00', '2580.00', '2018-04-14', '2018-04-14', '2018-04-24', '羽铃电动车，购于2017年9月，个人原因想出，原价2850，现在二手出1700可刀，证牌齐全自用车，左后方车轮防护板断裂(如图)，车前头购买的时候就有划痕因为不影响使用就没叫老板换新的，一切破损不影响使用。', '1');
-INSERT INTO `goods` VALUES ('83', '2', '6', '全新山地车特价：现价380元，原价498元，21速碟刹加厚铝合金轮子', '398.00', '498.00', '2018-04-14', '2018-04-14', '2018-04-24', '自身原因起不了。全新山地车特价：现价380元，原价498元，21速碟刹加厚铝合金轮子', '1');
-INSERT INTO `goods` VALUES ('84', '3', '7', '毕业离校，低价出售空调，', '800.00', '1846.00', '2018-04-14', '2018-04-14', '2018-04-24', '13年购入的长虹空调，加了2米铜管，1匹冷暖型', '1');
-INSERT INTO `goods` VALUES ('85', '1', '7', '头发剪了，出手吹风机', '15.00', '35.00', '2018-04-14', '2018-04-14', '2018-04-24', '头发剪短了，现在不需要了，低价出售', '1');
-INSERT INTO `goods` VALUES ('86', '7', '7', '单板吉他', '688.00', '1200.00', '2018-04-14', '2018-04-14', '2018-04-24', '单板原价1200，买了两年了，弹过一个多月就搁置，毕业季出了。赠书三月通（30），赠一套弦（30）.', '1');
-INSERT INTO `goods` VALUES ('87', '7', '8', '20出手辉柏嘉48色水溶性彩色铅笔一套', '20.00', '188.00', '2018-04-14', '2018-04-14', '2018-04-24', '德国进口彩铅辉柏嘉，48色淘宝在60左右，我的买过来画了几张画就闲置了，彩票效果相当好，黑色用得比较快还剩一半多了', '1');
-INSERT INTO `goods` VALUES ('88', '6', '9', '九成新仰卧板 便宜出售', '50.00', '150.00', '2018-04-14', '2018-04-14', '2018-04-24', '没用多少次 带不走便宜卖了', '1');
-INSERT INTO `goods` VALUES ('89', '4', '9', '艺乐杨幂刊', '20.00', '68.00', '2018-04-14', '2018-04-14', '2018-04-24', '艺乐杂志 杨幂专刊 走进偶像 了解偶像背后的故事', '1');
-INSERT INTO `goods` VALUES ('90', '1', '10', '傲慢与偏见', '28.00', '58.00', '2018-04-14', '2018-04-18', '2018-04-24', '傲慢与偏见 百词斩阅读计划，全英文小说，词汇量2401-3200 正版全新 用百词斩软件扫描书内二维码可获取书籍配套全英文音频以及书籍配套词汇', '0');
-INSERT INTO `goods` VALUES ('91', '4', '10', '刘语熙《我遇见我》', '25.00', '55.00', '2018-04-14', '2018-04-14', '2018-04-24', '“乌贼刘”刘语熙自传我遇见我 讲述追梦历程', '1');
-INSERT INTO `goods` VALUES ('92', '5', '10', '灰色短袖', '12.00', '30.00', '2018-04-14', '2018-04-14', '2018-04-24', '刚买的，全新 全新 全新', '1');
-INSERT INTO `goods` VALUES ('93', '5', '10', '帽子', '10.00', '25.00', '2018-04-14', '2018-04-14', '2018-04-24', '买戴过', '1');
-INSERT INTO `goods` VALUES ('94', '3', '1', '烧水壶', '22.00', '50.00', '2018-04-14', '2018-04-14', '2018-04-24', '烧水壶功能一切都好，请放心使用', '1');
-INSERT INTO `goods` VALUES ('95', '3', '1', '桌面吸尘器', '28.00', '59.00', '2018-04-14', '2018-04-14', '2018-04-24', '桌面吸尘器，可以清洁键盘、吸纸屑、头发、灰尘，有蓝色和白色两款', '1');
-INSERT INTO `goods` VALUES ('96', '7', '3', '纯手工绘画，来图定制，提供绘画过程图，追女友神器', '108.00', null, '2018-04-14', '2018-04-14', '2018-04-24', '纯手工绘画，来图定制，提供绘画过程，实木相框装裱，A4大小与12寸，64801606', '1');
-INSERT INTO `goods` VALUES ('103', '1', '22', '排球', '110.00', '200.00', '2018-04-22', '2018-04-22', '2018-05-02', '9成新', '1');
-INSERT INTO `goods` VALUES ('105', '1', '23', '七七', '1.00', '1.00', '2018-04-22', '2018-04-22', '2018-05-02', '没脑没胸', '0');
-INSERT INTO `goods` VALUES ('106', '5', '23', '资生堂金瓶防晒霜', '50.00', '260.00', '2018-05-07', '2018-05-18', '2018-05-17', '夏天必不可少的一款防晒霜，真的晒不黑哦。', '1');
-INSERT INTO `goods` VALUES ('107', '5', '23', '露得清防晒喷雾', '40.00', '110.00', '2018-05-07', '2018-05-07', '2018-05-17', '很方便的防晒喷雾，可以随身携带，随时喷一喷。而且这款喷雾很清爽，一点也不油腻。', '1');
-INSERT INTO `goods` VALUES ('108', '5', '23', '太阳镜', '10.00', '30.00', '2018-05-07', '2018-05-07', '2018-05-17', '可以用来遮阳的', '1');
-INSERT INTO `goods` VALUES ('109', '5', '23', '傲滴 隐形眼镜护理液', '30.00', '60.00', '2018-05-07', '2018-05-07', '2018-05-17', '一款超级舒服的隐形眼镜护理液。', '1');
-INSERT INTO `goods` VALUES ('110', '4', '23', '《我们仨》杨绛', '10.00', '17.00', '2018-05-07', '2018-05-07', '2018-05-17', '杨先生对他们家三人的记录。', '1');
-INSERT INTO `goods` VALUES ('111', '4', '23', '《一切都是最好的安排》加措', '10.00', '20.00', '2018-05-07', '2018-05-07', '2018-05-17', '诗人仓央嘉措的书，很美。', '1');
-INSERT INTO `goods` VALUES ('112', '1', '23', '梅卡萨排球', '200.00', '300.00', '2018-05-07', '2018-05-07', '2018-05-17', '国际专业排球比赛指定用球', '0');
+INSERT INTO `goods` VALUES ('113', '1', '26', '相机', '300.00', '800.00', '2019-05-15', '2019-05-15', '2019-05-25', '9成新，7区', '0');
+INSERT INTO `goods` VALUES ('114', '1', '26', '相机', '300.00', '800.00', '2019-05-15', '2019-05-15', '2019-05-25', '9成新，7区', '0');
+INSERT INTO `goods` VALUES ('115', '1', '26', '相机', '300.00', '800.00', '2019-05-15', '2019-05-15', '2019-05-25', '9成新，7区', '0');
+INSERT INTO `goods` VALUES ('116', '3', '26', '咖啡', '10.00', '15.00', '2019-05-15', '2019-05-15', '2019-05-25', '好喝的雀巢', '0');
+INSERT INTO `goods` VALUES ('117', '1', '26', '', null, null, '2019-05-15', '2019-05-15', '2019-05-25', '', '0');
+INSERT INTO `goods` VALUES ('118', '1', '26', '', null, null, '2019-05-15', '2019-05-15', '2019-05-25', '', '0');
+INSERT INTO `goods` VALUES ('119', '1', '26', '扬州炒饭', '8.00', '10.00', '2019-05-15', '2019-05-15', '2019-05-25', '北门', '0');
+INSERT INTO `goods` VALUES ('120', '3', '26', '飞利浦吹风机', '20.00', '50.00', '2019-05-16', '2019-05-16', '2019-05-26', '七区自取', '0');
+INSERT INTO `goods` VALUES ('121', '3', '26', '飞利浦吹风机', '30.00', '50.00', '2019-05-16', '2019-05-16', '2019-05-26', '七区自取', '1');
+INSERT INTO `goods` VALUES ('122', '3', '26', '九阳电饭煲', '100.00', '199.00', '2019-05-16', '2019-05-16', '2019-05-26', '送货上门', '1');
+INSERT INTO `goods` VALUES ('123', '3', '26', '理发推子', '30.00', '38.00', '2019-05-16', '2019-05-16', '2019-05-26', '九成新，二食堂', '1');
+INSERT INTO `goods` VALUES ('124', '3', '26', '电熨斗', '100.00', '180.00', '2019-05-16', '2019-05-16', '2019-05-26', '九成新，自取', '1');
+INSERT INTO `goods` VALUES ('125', '3', '26', '雷蛇鼠标', '200.00', '290.00', '2019-05-16', '2019-05-16', '2019-05-26', '很好用的一款鼠标', '1');
+INSERT INTO `goods` VALUES ('126', '3', '26', '榨汁机', '80.00', '100.00', '2019-05-16', '2019-05-16', '2019-05-26', '几乎全新', '1');
+INSERT INTO `goods` VALUES ('127', '5', '27', '阿迪篮球鞋', '300.00', '380.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新', '0');
+INSERT INTO `goods` VALUES ('128', '5', '27', '阿迪篮球鞋', '300.00', '380.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新', '1');
+INSERT INTO `goods` VALUES ('129', '5', '27', '安踏篮球鞋', '200.00', '280.00', '2019-05-16', '2019-05-16', '2019-05-26', '二食堂交易', '1');
+INSERT INTO `goods` VALUES ('130', '5', '27', '粉色连衣裙', '100.00', '110.00', '2019-05-16', '2019-05-16', '2019-05-26', '可小刀', '1');
+INSERT INTO `goods` VALUES ('131', '5', '27', '森系长裙', '80.00', '100.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新不砍价', '1');
+INSERT INTO `goods` VALUES ('132', '5', '27', '白色毛衣', '70.00', '78.00', '2019-05-16', '2019-05-16', '2019-05-26', '九成新，未下水', '1');
+INSERT INTO `goods` VALUES ('133', '7', '28', '少儿编程课', '800.00', '1180.00', '2019-05-16', '2019-05-16', '2019-05-26', '少儿教育', '1');
+INSERT INTO `goods` VALUES ('134', '7', '28', 'ps技能课', '80.00', '100.00', '2019-05-16', '2019-05-16', '2019-05-26', '当下必备技能', '1');
+INSERT INTO `goods` VALUES ('135', '7', '28', 'python爬虫课', '300.00', '340.00', '2019-05-16', '2019-05-16', '2019-05-26', '爬虫技能，适当学习', '1');
+INSERT INTO `goods` VALUES ('136', '7', '28', 'c++入门课', '20.00', '50.00', '2019-05-16', '2019-05-16', '2019-05-26', '基础语言，科班必会', '1');
+INSERT INTO `goods` VALUES ('137', '4', '29', '长难句解密', '10.00', '23.00', '2019-05-16', '2019-05-16', '2019-05-26', '何凯文经典', '1');
+INSERT INTO `goods` VALUES ('138', '4', '29', '线性代数辅导讲义', '20.00', '30.00', '2019-05-16', '2019-05-16', '2019-05-26', '李永乐呕心沥血', '0');
+INSERT INTO `goods` VALUES ('139', '4', '29', '精讲精练', '30.00', '50.00', '2019-05-16', '2019-05-16', '2019-05-26', '肖大大的书，政治必看', '1');
+INSERT INTO `goods` VALUES ('140', '4', '29', '新东方真题集训', '30.00', '38.00', '2019-05-16', '2019-05-16', '2019-05-26', '好书，全新', '1');
+INSERT INTO `goods` VALUES ('141', '4', '29', '英语协作', '30.00', '33.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新', '1');
+INSERT INTO `goods` VALUES ('142', '4', '29', '数学1000题', '20.00', '28.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新', '1');
+INSERT INTO `goods` VALUES ('143', '1', '30', '联想手机', '800.00', '999.00', '2019-05-16', '2019-05-16', '2019-05-26', '九成新，高通芯片', '0');
+INSERT INTO `goods` VALUES ('144', '1', '30', '联想手机', '800.00', '999.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新，', '1');
+INSERT INTO `goods` VALUES ('145', '1', '30', '佳能相机', '1000.00', '1800.00', '2019-05-16', '2019-05-16', '2019-05-26', '高像素', '1');
+INSERT INTO `goods` VALUES ('146', '1', '30', '森海耳机', '100.00', '190.00', '2019-05-16', '2019-05-16', '2019-05-26', '无损音质', '0');
+INSERT INTO `goods` VALUES ('147', '1', '30', '笔记本电脑', '1900.00', '2490.00', '2019-05-16', '2019-05-16', '2019-05-26', '流畅i5', '0');
+INSERT INTO `goods` VALUES ('148', '1', '30', '音箱', '100.00', '110.00', '2019-05-16', '2019-05-16', '2019-05-26', '声音够大', '1');
+INSERT INTO `goods` VALUES ('149', '1', '30', '红米手机', '800.00', '999.00', '2019-05-16', '2019-05-16', '2019-05-26', '六区自取', '1');
+INSERT INTO `goods` VALUES ('150', '2', '31', '公主自行车', '800.00', '1000.00', '2019-05-16', '2019-05-16', '2019-05-26', '骑着不费力', '1');
+INSERT INTO `goods` VALUES ('151', '2', '31', '点滑板车', '300.00', '500.00', '2019-05-16', '2019-05-16', '2019-05-26', '续航强劲', '1');
+INSERT INTO `goods` VALUES ('152', '2', '31', '死飞自行车', '100.00', '300.00', '2019-05-16', '2019-05-16', '2019-05-26', '酷炫外观', '1');
+INSERT INTO `goods` VALUES ('153', '2', '31', '买菜车', '20.00', '50.00', '2019-05-16', '2019-05-16', '2019-05-26', '省力气', '1');
+INSERT INTO `goods` VALUES ('154', '6', '32', '登山包', '100.00', '120.00', '2019-05-16', '2019-05-16', '2019-05-26', '舒适', '1');
+INSERT INTO `goods` VALUES ('155', '6', '32', '帆布鞋', '100.00', '130.00', '2019-05-16', '2019-05-16', '2019-05-26', '全新', '1');
+INSERT INTO `goods` VALUES ('156', '6', '32', '篮球', '10.00', '20.00', '2019-05-16', '2019-05-16', '2019-05-26', '九成新，没打过', '1');
 
 -- ----------------------------
--- Table structure for `image`
+-- Table structure for image
 -- ----------------------------
 DROP TABLE IF EXISTS `image`;
 CREATE TABLE `image` (
@@ -181,7 +196,7 @@ CREATE TABLE `image` (
   `img_url` text NOT NULL COMMENT '图片链接',
   PRIMARY KEY (`id`),
   KEY `goods_id` (`goods_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of image
@@ -238,9 +253,53 @@ INSERT INTO `image` VALUES ('109', '109', '330a9a46-6434-4d04-a72b-a91a14035229.
 INSERT INTO `image` VALUES ('110', '110', '0583cb1e-6acd-46da-bebc-4a9f1d6c3ac7.jpg');
 INSERT INTO `image` VALUES ('111', '111', 'ce18c0f4-dc10-454e-9791-e1992164a384.jpg');
 INSERT INTO `image` VALUES ('112', '112', '854dff80-d049-4381-ae40-d1d23cd0e88b.jpg');
+INSERT INTO `image` VALUES ('113', '113', '');
+INSERT INTO `image` VALUES ('114', '114', '');
+INSERT INTO `image` VALUES ('115', '115', '6a82b918-c2d8-47eb-a0c7-4c30a1a0305e.jpg');
+INSERT INTO `image` VALUES ('116', '116', '584f7063-0d35-4538-a9e8-16b4d652ca2e.jpg');
+INSERT INTO `image` VALUES ('117', '117', '');
+INSERT INTO `image` VALUES ('118', '118', '');
+INSERT INTO `image` VALUES ('119', '119', '4c538938-95e7-4286-b62d-3ba21357bc77.jpg');
+INSERT INTO `image` VALUES ('120', '120', '');
+INSERT INTO `image` VALUES ('121', '121', '91fac2bb-8465-49b0-8240-d5553e7a3bc6.jpg');
+INSERT INTO `image` VALUES ('122', '122', 'af2a1158-79e1-4b9b-bc9f-caf257e2513e.jpg');
+INSERT INTO `image` VALUES ('123', '123', 'dee83047-e7f8-4606-a503-812ebefa8ca8.jpg');
+INSERT INTO `image` VALUES ('124', '124', '21b42248-cc4d-4fd5-b108-558332aa0255.jpg');
+INSERT INTO `image` VALUES ('125', '125', 'f4ebaf5d-2421-4a7b-be99-87d91a14b87a.png');
+INSERT INTO `image` VALUES ('126', '126', '644c2b01-3dc0-49e1-bc6e-6cf80ca4494c.jpg');
+INSERT INTO `image` VALUES ('127', '127', '');
+INSERT INTO `image` VALUES ('128', '128', 'df724d30-4d8b-4e84-bc36-58df992afcb3.jpg');
+INSERT INTO `image` VALUES ('129', '129', 'ab112589-d566-4c66-81b4-785904eb43a2.jpg');
+INSERT INTO `image` VALUES ('130', '130', 'fd380314-ed90-41da-8b6d-41092b095084.jpg');
+INSERT INTO `image` VALUES ('131', '131', 'a4948e7d-f9ff-458d-beed-f50a54aee1e1.jpg');
+INSERT INTO `image` VALUES ('132', '132', 'c500db3b-4c74-4f11-ae1a-ad98ab1abed4.jpg');
+INSERT INTO `image` VALUES ('133', '133', 'a493618a-1fda-4811-ba34-134b95678b02.png');
+INSERT INTO `image` VALUES ('134', '134', '44cb6af4-028f-4232-ae33-c081ee854461.jpg');
+INSERT INTO `image` VALUES ('135', '135', '47ca78fb-32a6-4fb0-8eb8-47a929f0df98.png');
+INSERT INTO `image` VALUES ('136', '136', '68d8d18c-eb3a-4641-b818-a89b32dc5833.jpg');
+INSERT INTO `image` VALUES ('137', '137', '78b3288c-f581-4386-8c3e-2d0ca930d538.jpg');
+INSERT INTO `image` VALUES ('138', '138', '24642b06-56fb-44fc-999b-8f7dda980735.jpg');
+INSERT INTO `image` VALUES ('139', '139', '2c7f6a6d-fbc9-444e-90a1-7379c644c857.jpg');
+INSERT INTO `image` VALUES ('140', '140', '6181126a-5dd0-4c45-99a8-cb8b0d5895eb.jpg');
+INSERT INTO `image` VALUES ('141', '141', '1a9c2a2f-1013-4f9d-a6a1-b849800b14fb.jpg');
+INSERT INTO `image` VALUES ('142', '142', '4122126c-3c48-4134-9673-ef31ed36f4e4.jpg');
+INSERT INTO `image` VALUES ('143', '143', '');
+INSERT INTO `image` VALUES ('144', '144', '2a2ade9b-a795-47d1-aa0c-dea0fc2b9499.jpg');
+INSERT INTO `image` VALUES ('145', '145', '8535b67c-ac19-45d1-913c-d1c52b37b819.jpg');
+INSERT INTO `image` VALUES ('146', '146', '66e9fe36-8551-4d59-9981-94fb768ae11d.jpg');
+INSERT INTO `image` VALUES ('147', '147', 'a193a235-09d9-463b-b0ba-40ccb94a7c6a.jpg');
+INSERT INTO `image` VALUES ('148', '148', 'a7b25101-e23a-4f50-9895-928e34a552fe.png');
+INSERT INTO `image` VALUES ('149', '149', '673cfbb2-c3bc-456e-8f27-cfdb29e3a2ad.png');
+INSERT INTO `image` VALUES ('150', '150', '968345e7-aa62-4d67-b52b-8fd8aaaadbb0.jpg');
+INSERT INTO `image` VALUES ('151', '151', '1c299de3-5b7f-4690-8621-82d38b409bfd.jpg');
+INSERT INTO `image` VALUES ('152', '152', 'ab17bb9f-c78d-41b4-a4e7-b50944ad57b5.jpg');
+INSERT INTO `image` VALUES ('153', '153', 'a111fea1-bead-43b6-b41e-b953a5f01b03.jpg');
+INSERT INTO `image` VALUES ('154', '154', '94a5bb45-f74c-4b79-90dc-3d957ac6f82b.jpg');
+INSERT INTO `image` VALUES ('155', '155', '74280c20-8016-4da6-8048-05f64b60364b.jpg');
+INSERT INTO `image` VALUES ('156', '156', '3369c663-42e0-4286-84fa-3b5ccf62abd5.jpg');
 
 -- ----------------------------
--- Table structure for `notice`
+-- Table structure for notice
 -- ----------------------------
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
@@ -250,7 +309,7 @@ CREATE TABLE `notice` (
   `create_at` varchar(25) DEFAULT NULL COMMENT '推送信息时间',
   `status` tinyint(4) DEFAULT NULL COMMENT '状态，0未读，1已读',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of notice
@@ -272,9 +331,10 @@ INSERT INTO `notice` VALUES ('14', '8', '可以了 交流吧 分页先不搞了'
 INSERT INTO `notice` VALUES ('15', '23', '有宿舍用的小桌子吗', '2018-05-07 17:15:37', '0');
 INSERT INTO `notice` VALUES ('16', '23', '求一个USB台灯', '2018-05-18 23:25:55', '0');
 INSERT INTO `notice` VALUES ('17', '23', '哈哈', '2018-05-18 23:29:49', '0');
+INSERT INTO `notice` VALUES ('18', '26', '想要一台笔记本', '2019-05-15 11:54:41', '0');
 
 -- ----------------------------
--- Table structure for `orders`
+-- Table structure for orders
 -- ----------------------------
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
@@ -287,7 +347,7 @@ CREATE TABLE `orders` (
   `order_information` varchar(50) DEFAULT NULL,
   `order_date` varchar(50) DEFAULT NULL COMMENT '下单时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
@@ -296,9 +356,18 @@ INSERT INTO `orders` VALUES ('1', '11', '78', '85970353', '10', '3', '买给爸�
 INSERT INTO `orders` VALUES ('2', '23', '90', '33646286', '28', '3', '', '2018-05-07 11:16:27');
 INSERT INTO `orders` VALUES ('3', '23', '3', '17573202', '23', '3', '', '2018-05-07 11:18:03');
 INSERT INTO `orders` VALUES ('4', '23', '81', '14071824', '168', '1', '', '2018-05-18 11:16:49');
+INSERT INTO `orders` VALUES ('5', '25', '108', '56091549', '10', '1', '', '2019-03-31 05:55:29');
+INSERT INTO `orders` VALUES ('6', '25', '107', '82524056', '40', '1', '', '2019-04-24 09:09:10');
+INSERT INTO `orders` VALUES ('7', '26', '83', '76979104', '398', '1', '尽快送达', '2019-05-15 04:21:53');
+INSERT INTO `orders` VALUES ('8', '27', '115', '58173990', '300', '3', '尽快送达', '2019-05-15 04:23:36');
+INSERT INTO `orders` VALUES ('9', '27', '116', '99782678', '10', '3', '尽快送达', '2019-05-15 05:09:59');
+INSERT INTO `orders` VALUES ('10', '27', '119', '59624940', '8', '3', '快点送啊。。', '2019-05-15 05:13:39');
+INSERT INTO `orders` VALUES ('11', '26', '138', '26115684', '20', '3', '七区', '2019-05-16 03:36:14');
+INSERT INTO `orders` VALUES ('12', '26', '147', '84224706', '1900', '1', '', '2019-05-16 09:59:45');
+INSERT INTO `orders` VALUES ('13', '26', '146', '56691645', '100', '1', '黄金客户', '2019-05-16 10:02:22');
 
 -- ----------------------------
--- Table structure for `purse`
+-- Table structure for purse
 -- ----------------------------
 DROP TABLE IF EXISTS `purse`;
 CREATE TABLE `purse` (
@@ -309,27 +378,35 @@ CREATE TABLE `purse` (
   `withdrawals` float(11,0) DEFAULT NULL COMMENT '提现钱数',
   `state` int(11) DEFAULT NULL COMMENT '状态 0未审核   已审核（1不通过 2通过）',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of purse
 -- ----------------------------
-INSERT INTO `purse` VALUES ('1', '1', '00000000941', null, null, '2');
-INSERT INTO `purse` VALUES ('2', '2', '00000001148', null, null, null);
-INSERT INTO `purse` VALUES ('3', '3', '00000002800', null, null, '2');
-INSERT INTO `purse` VALUES ('4', '4', '00000007745', null, null, null);
-INSERT INTO `purse` VALUES ('5', '5', '00000000052', null, null, null);
-INSERT INTO `purse` VALUES ('6', '11', '00000001005', null, null, null);
-INSERT INTO `purse` VALUES ('13', '18', '00000000000', null, null, null);
-INSERT INTO `purse` VALUES ('14', '19', '00000000000', null, null, null);
-INSERT INTO `purse` VALUES ('15', '20', '00000000000', null, null, null);
-INSERT INTO `purse` VALUES ('16', '21', '00000001000', null, null, '2');
-INSERT INTO `purse` VALUES ('17', '22', '00000000500', null, null, '2');
-INSERT INTO `purse` VALUES ('18', '23', '00000001131', null, null, null);
-INSERT INTO `purse` VALUES ('19', '24', '00000000000', null, null, null);
+INSERT INTO `purse` VALUES ('0', '0', '00000000000', '0', '0', null);
+INSERT INTO `purse` VALUES ('1', '1', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('2', '2', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('3', '3', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('4', '4', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('5', '5', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('6', '11', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('13', '18', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('15', '20', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('16', '21', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('17', '22', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('18', '23', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('19', '24', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('20', '25', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('21', '26', '00000001900', null, null, null);
+INSERT INTO `purse` VALUES ('22', '27', '00000002000', '12', null, '0');
+INSERT INTO `purse` VALUES ('23', '28', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('24', '29', '00000002020', null, null, null);
+INSERT INTO `purse` VALUES ('25', '30', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('26', '31', '00000002000', null, null, null);
+INSERT INTO `purse` VALUES ('27', '32', '00000002000', null, null, null);
 
 -- ----------------------------
--- Table structure for `reply`
+-- Table structure for reply
 -- ----------------------------
 DROP TABLE IF EXISTS `reply`;
 CREATE TABLE `reply` (
@@ -347,7 +424,7 @@ CREATE TABLE `reply` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -362,32 +439,15 @@ CREATE TABLE `user` (
   `last_login` varchar(20) CHARACTER SET utf8 DEFAULT NULL COMMENT '最近一次登陆时间',
   `status` tinyint(4) DEFAULT '0' COMMENT '账号是否冻结，默认0未冻结',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '17862821996', 'lduldj', 'C4CA4238A0B923820DCC509A6F75849B', '421330323', '2017-05-09 02:15', '2', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('2', '15552201622', 'hly', 'C4CA4238A0B923820DCC509A6F75849B', '782697347', '2018-01-10 10:30', '2', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('3', '15880330000', '靓仔', 'C4CA4238A0B923820DCC509A6F75849B', '1256972301', '2017-05-17 10:35', '2', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('4', '15880331111', 'user1', 'C4CA4238A0B923820DCC509A6F75849B', '554625458', '2018-02-14 17:35', '2', '0000000100', '', '1');
-INSERT INTO `user` VALUES ('5', '15880332222', 'user2', 'C4CA4238A0B923820DCC509A6F75849B', '1025656543', '2018-02-23 17:12', '1', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('6', '15880333333', '秦新敏', 'C4CA4238A0B923820DCC509A6F75849B', '356456456', '2018-02-14 17:35', '1', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('7', '15880334444', 'user4', 'C4CA4238A0B923820DCC509A6F75849B', '245534351', '2018-02-14 17:48', '3', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('8', '15880335555', 'user5', 'C4CA4238A0B923820DCC509A6F75849B', '3145654664', '2018-02-14 17:35', '1', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('9', '15880336666', 'user6', 'C4CA4238A0B923820DCC509A6F75849B', '554625458', '2018-02-23 17:12', '2', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('10', '15880337777', 'user7', 'C4CA4238A0B923820DCC509A6F75849B', '95785588', '2017-05-09 02:15', '5', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('11', '15859512853', 'parent', 'E10ADC3949BA59ABBE56E057F20F883E', '', '2018-04-16 17:01', '1', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('12', '15880338888', '15880338888', 'C4CA4238A0B923820DCC509A6F75849B', '2564645456', '2018-04-16 17:37', '1', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('13', '15880330001', '15880330001', 'C4CA4238A0B923820DCC509A6F75849B', null, '2018-04-17 14:41', '2', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('14', '15880330002', '15880330002', 'C4CA4238A0B923820DCC509A6F75849B', null, '2018-04-17 14:56', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('15', '15880330003', 'fdas', 'D41D8CD98F00B204E9800998ECF8427E', null, '2018-04-19 11:16', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('16', '12345654654', '1', 'C4CA4238A0B923820DCC509A6F75849B', null, '2018-04-19 12:01', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('17', '15880335556', '66', '657DDF7370B0D5EFF54A335127A66282', null, '2018-04-19 12:06', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('18', '15555555555', '58', '5B1B68A9ABF4D2CD155C81A9225FD158', null, '2018-04-19 12:07', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('19', '15353535355', '1', 'C4CA4238A0B923820DCC509A6F75849B', null, '2018-04-19 13:09', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('20', '15880330005', '123', 'C4CA4238A0B923820DCC509A6F75849B', '156454654', '2018-04-20 08:54', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('21', '15880336667', '1545654', 'C4CA4238A0B923820DCC509A6F75849B', null, '2018-04-20 11:53', '0', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('22', '17862821556', 'gmd', '4E167A9B62FA9E9E06877D256890B760', null, '2018-04-22 12:13', '1', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('23', '17853593223', '小丽', '202CB962AC59075B964B07152D234B70', '357598890', '2018-04-22 12:25', '7', '0000000100', null, '1');
-INSERT INTO `user` VALUES ('24', '17862821818', 'sik', '96E79218965EB72C92A549DD5A330112', null, '2018-12-29 20:25', '0', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('26', '18390240561', 'aaaaa', 'E10ADC3949BA59ABBE56E057F20F883E', null, '2019-05-14 23:47', '9', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('27', '18390240562', 'bbbb', 'E10ADC3949BA59ABBE56E057F20F883E', '932690325', '2019-05-15 12:08', '5', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('28', '18390240563', 'cccc', 'E10ADC3949BA59ABBE56E057F20F883E', null, '2019-05-16 13:36', '4', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('29', '18390240564', 'dddd', 'E10ADC3949BA59ABBE56E057F20F883E', null, '2019-05-16 13:40', '6', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('30', '18390240565', 'eeee', 'E10ADC3949BA59ABBE56E057F20F883E', null, '2019-05-16 13:44', '6', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('31', '18390240566', 'ffff', 'E10ADC3949BA59ABBE56E057F20F883E', null, '2019-05-16 13:48', '4', '0000000100', null, '1');
+INSERT INTO `user` VALUES ('32', '18390240567', 'gggg', 'E10ADC3949BA59ABBE56E057F20F883E', null, '2019-05-16 13:51', '3', '0000000100', null, '1');
